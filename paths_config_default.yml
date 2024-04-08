@@ -4,7 +4,7 @@ model_basedir: "/home/lzl/DeepSDF/implicit-shape-reconstruction/model_basedir"
 # Path to base data directory
 data_basedir: "/home/lzl/DeepSDF/implicit-shape-reconstruction/casename_files/Colon"
 # Directory name with labels within base data directory
-labels_dirname: "Task10_Colon__CTPelvic1K__fold0_3dfullres_pred"
+labels_dirname: "pelvic_rl"
 
 # Path to directory with casename files
 casefiles_basedir: "/home/lzl/DeepSDF/implicit-shape-reconstruction/casename_files/Colon"

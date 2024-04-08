@@ -3,7 +3,7 @@ from pathlib import Path
 import random
 
 # 指定目录路径
-dir_path = Path("/home/lzl/DeepSDF/implicit-shape-reconstruction/casename_files/Colon/Task10_Colon__CTPelvic1K__fold0_3dfullres_pred")
+dir_path = Path("/home/lzl/DeepSDF/implicit-shape-reconstruction/casename_files/Colon/pelvic_rl")
 
 # 列出目录下的所有文件
 all_files = [f.name[:-7] for f in dir_path.iterdir() if f.is_file()]

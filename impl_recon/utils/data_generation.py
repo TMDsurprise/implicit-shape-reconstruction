@@ -75,7 +75,7 @@ def load_volumes(volumes_dir: Path, casenames: List[str]) -> Tuple[List[torch.Te
     volumes: list[np.ndarray] = []
     spacings: list[np.ndarray] = []
     for casename in casenames:
-        curr_pattern = f'{casename}*.nii.gz*'
+        curr_pattern = f'{casename}*.nii*'
         files = list(volumes_dir.glob(curr_pattern))
         if len(files) != 1:
             raise ValueError(f'Exactly one file must fit the pattern:\n'

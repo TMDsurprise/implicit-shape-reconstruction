@@ -22,8 +22,8 @@ latent_dim: 128
 op_num_layers: 8
 # For AD: layers with coordinates in OccupancyPredictor
 op_coord_layers: [0, 4]
-
-batch_size_train: 8
+# batch_size_train: 8 too large for GPU
+batch_size_train: 6
 batch_size_val: 1
 # For AD: number of points per example per dim for training. If -1, use the whole volume.
 num_points_per_example_per_dim_train: 64
