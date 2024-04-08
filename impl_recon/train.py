@@ -1,14 +1,18 @@
 import math
 import sys
+import os
 import time
 from pathlib import Path
 from typing import Optional
-
 import torch
 from torch.optim import optimizer as opt
 from torch.utils import data
 from torch.utils.tensorboard import SummaryWriter
 
+sys.path.append('/home/lzl/DeepSDF/implicit-shape-reconstruction')
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:<512>"
+# prevents the allocator from splitting blocks larger than this size (in MB). 
+# This can help prevent fragmentation and may allow some borderline workloads to complete without running out of memory. 
 from impl_recon.models import implicits
 from impl_recon.utils import config_io, data_generation, io_utils, nn_utils
 
@@ -199,10 +203,10 @@ def main():
     writer: Optional[SummaryWriter]
     checkpoint_writer: Optional[io_utils.RollingCheckpointWriter]
     if model_dir is not None:
-        if model_dir.exists():
-            raise ValueError('Model directory already exists. Exiting to prevent accidental '
-                             f'overwriting.\n{model_dir}')
-        model_dir.mkdir()
+        # if model_dir.exists():
+        #     raise ValueError('Model directory already exists. Exiting to prevent accidental '
+        #                      f'overwriting.\n{model_dir}')
+        # model_dir.mkdir()
         # Write the parameters to the model folder
         config_io.write_config(config_filepath, model_dir)
 

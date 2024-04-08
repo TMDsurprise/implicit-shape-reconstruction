@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/lzl/DeepSDF/implicit-shape-reconstruction/impl_recon/train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "-p","/home/lzl/DeepSDF/implicit-shape-reconstruction/paths_config_default.yml",
+                "-c","/home/lzl/DeepSDF/implicit-shape-reconstruction/config_files/training/train_config_pelvic_thick_ad.yml",
+            ]
+        }
+    ]
+}

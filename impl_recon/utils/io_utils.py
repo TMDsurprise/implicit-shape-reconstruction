@@ -34,8 +34,9 @@ def load_nifti_file(image_path: Path) -> Tuple[np.ndarray, np.ndarray]:
     img_data = np.ascontiguousarray(img_data).astype(img.get_data_dtype())
     # Convert the transformation matrix from nibabel's RAS coordinates to DICOM's LPS coordinates
     ijk_to_lps = img.affine.copy()
-    ijk_to_lps[0] *= -1
-    ijk_to_lps[1] *= -1
+    #在geometry_utils.is_matrix_scaling_and_transform(affine)中，需要affine中对角线上每个数均为正数
+    # ijk_to_lps[0] *= -1
+    # ijk_to_lps[1] *= -1
     return img_data, ijk_to_lps
 
 
